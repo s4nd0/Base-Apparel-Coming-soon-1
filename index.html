@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Base Apparel coming soon page</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+  <main>
+    <div id="left-side">
+      <div class="logo">
+        <img src="./images/logo.svg" alt="" width="100px">
+      </div>
+  
+      <div id="hero-image-mobile">
+        <img src="./images/hero-mobile.jpg" alt="">
+      </div>
+  
+      <div class="content">
+        <h1>
+          <span>we're</span> <br>
+          coming <br>
+          soon
+        </h1>
+  
+        <p>Hello fellow shoppers! We're currently building
+          our new fashion store. Add your email below to 
+          stay up-to-date with announcements and our launch deals.
+        </p>
+  
+        <div class="form">
+          <input type="text" id="input-field" placeholder="Email Address"> <span id="error"></span> <button onclick="check()" class="submit-button"><span class="submit-icon"></span></button>
+        </div>
+  
+        <p id="error2"></p>
+      </div>
+    </div>
+
+    <div id="hero-image-desktop">
+      <img src="./images/hero-desktop.jpg" alt="">
+    </div>
+
+    
+
+
+  </main>
+
+
+  <script>
+    function check()
+    {
+      var email = document.getElementById("input-field").value;
+      var isEmail = email.indexOf("@");
+
+      if(isEmail == -1)
+      {
+        document.getElementById("input-field").style.backgroundImage = "url(./images/icon-error.svg)";
+        document.getElementById("error2").innerHTML = "Please provide a valid email";
+      }
+      else
+      {
+        document.getElementById("input-field").style.backgroundImage = "none";
+        document.getElementById("error2").innerHTML = " ";
+      }
+    }
+  </script>
+</body>
+</html>
